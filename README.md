@@ -163,7 +163,7 @@ curl -X POST -F "file=@car.jpg" http://localhost:8000/predict | jq .
 
 Skip this section if you only want inference (pretrained model included). These steps are required only if you want to retrain from scratch.
 
-The project uses the [Stanford Cars dataset](https://www.kaggle.com/datasets/jessicali9530/stanford-cars-dataset). The dataset download uses `kagglehub`:
+The project uses the [Stanford Cars dataset](https://www.kaggle.com/datasets/eduardo4jesus/stanford-cars-dataset). The dataset download uses `kagglehub`:
 
 ```bash
 # Download and prepare
