@@ -13,6 +13,11 @@
   <img src="https://img.shields.io/badge/tests-10/10-brightgreen" alt="Tests: 10/10 passing">
   <img src="https://img.shields.io/badge/docker-ready-2496ED?logo=docker&logoColor=white" alt="Docker ready">
   <img src="https://img.shields.io/badge/license-MIT-yellow" alt="MIT License">
+  <img src="https://img.shields.io/badge/huggingface-deployed-FFD21E?logo=huggingface&logoColor=black" alt="Hugging Face Deployed">
+</p>
+
+<p align="center">
+  <img src="assets/screenshot.png" alt="Vintage Car Classifier — web UI with confidence gauge and Grad-CAM heatmap" width="700">
 </p>
 
 ---
@@ -40,6 +45,8 @@
   - [Export](#model-export)
 - [Results](#results)
 - [Docker](#docker)
+- [Deployment](#deployment)
+  - [Hugging Face Spaces](#hugging-face-spaces)
 - [CI/CD](#cicd)
 - [Project Structure](#project-structure)
 - [Colab Training](#colab-training)
@@ -432,6 +439,29 @@ The Docker image:
 - Starts the FastAPI server with uvicorn
 
 The model files are included in the image, so no additional downloads are needed at runtime.
+
+---
+
+## Deployment
+
+### Hugging Face Spaces
+
+The app is deployed on **Hugging Face Spaces** (Docker SDK) and accessible at:
+
+👉 **[https://huggingface.co/spaces/ramiz0/vintage-car-classifier](https://huggingface.co/spaces/ramiz0/vintage-car-classifier)**
+
+The Space:
+- Builds from the same `Dockerfile` used for local deployment
+- Serves the full web UI (drag-and-drop upload, confidence gauge, Grad-CAM heatmap)
+- Runs the FastAPI server with the trained TorchScript model (196 classes)
+- Automatically restarts on each push to the Hugging Face repo
+
+To deploy your own instance, fork the Space or use the `huggingface_hub` CLI:
+
+```bash
+pip install huggingface_hub
+huggingface-cli upload --repo-type space <your-username>/<your-space> .
+```
 
 ---
 
