@@ -186,6 +186,12 @@ This will:
 | Test | ~2,400 | 15% |
 | **Total** | **16,185** | **100%** |
 
+If you use this dataset, please cite the following paper:
+
+> Jonathan Krause, Michael Stark, Jia Deng, Li Fei-Fei.  
+> **3D Object Representations for Fine-Grained Categorization**.  
+> *4th IEEE Workshop on 3D Representation and Recognition, at ICCV 2013 (3dRR-13). Sydney, Australia. Dec. 8, 2013.*
+
 ### Training from Scratch
 
 Training on a CPU is slow (~2 minutes per epoch). **Use the Colab notebook** (`train_colab.ipynb`) for GPU training — upload it to Google Colab, run all cells, and download the trained model.
@@ -567,6 +573,27 @@ The notebook handles:
 - [Google Colab](https://colab.research.google.com/) — Free GPU (T4) for model training
 
 ---
+
+## Citation
+
+If you use the Stanford Cars dataset in your work, please cite:
+
+> Jonathan Krause, Michael Stark, Jia Deng, Li Fei-Fei.  
+> **3D Object Representations for Fine-Grained Categorization**.  
+> *4th IEEE Workshop on 3D Representation and Recognition, at ICCV 2013 (3dRR-13). Sydney, Australia. Dec. 8, 2013.*
+
+BibTeX:
+
+```
+@inproceedings{krause2013cars,
+  title={3D Object Representations for Fine-Grained Categorization},
+  author={Jonathan Krause and Michael Stark and Jia Deng and Li Fei-Fei},
+  booktitle={4th IEEE Workshop on 3D Representation and Recognition, at ICCV 2013 (3dRR-13)},
+  address={Sydney, Australia},
+  month={December},
+  year={2013}
+}
+```
 
 ## License
 
