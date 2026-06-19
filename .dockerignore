@@ -1,0 +1,13 @@
+.venv/
+.venv_windows/
+__pycache__/
+*.pyc
+.pytest_cache/
+.git/
+data/processed/
+data/raw/
+models/checkpoints/
+logs/
+train_colab.ipynb
+.DS_Store
+*.zip

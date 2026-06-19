@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Car Classifier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="glow"></div>
+
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2h1l2-3h8l2 3h1a2 2 0 012 2v6a2 2 0 01-2 2M5 17a2 2 0 002 2h10a2 2 0 002-2"/>
+          <circle cx="7" cy="14" r="2"/><circle cx="17" cy="14" r="2"/>
+        </svg>
+        <span>VintageClass</span>
+      </div>
+      <p class="subtitle">Upload a car photo to identify the make, model &amp; era</p>
+    </header>
+
+    <div class="drop-zone" id="dropZone">
+      <div class="drop-content" id="dropContent">
+        <div class="drop-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <p class="drop-text">Drag &amp; drop a car photo here</p>
+        <span class="drop-or">or</span>
+        <label class="file-label">Browse Files<input type="file" id="fileInput" accept="image/*" hidden></label>
+      </div>
+      <img id="preview" class="preview hidden" alt="preview">
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner-ring"></div>
+      <p>Analyzing...</p>
+    </div>
+
+    <div id="results" class="results hidden">
+      <div class="results-grid">
+        <div class="result-left">
+          <div class="prediction-card">
+            <h2 id="className" class="class-name"></h2>
+            <div class="gauge-wrap">
+              <svg class="gauge" viewBox="0 0 120 120">
+                <circle class="gauge-bg" cx="60" cy="60" r="52"/>
+                <circle class="gauge-fill" id="gaugeFill" cx="60" cy="60" r="52" stroke-dasharray="326.7"/>
+              </svg>
+              <span class="gauge-text" id="gaugeText">0%</span>
+            </div>
+          </div>
+          <div class="top3-card">
+            <h3>Top Predictions</h3>
+            <div id="top3"></div>
+          </div>
+        </div>
+        <div class="result-right">
+          <div class="image-compare" id="imageCompare">
+            <div class="compare-panel">
+              <span class="compare-label">Original</span>
+              <img id="compareOriginal" class="compare-img" alt="original">
+            </div>
+            <div class="compare-divider"></div>
+            <div class="compare-panel hidden" id="heatmapPanel">
+              <span class="compare-label">Activation Map</span>
+              <img id="heatmapImg" class="compare-img" alt="heatmap">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+  </div>
+
+  <footer>
+    <p>Built with PyTorch &amp; FastAPI &middot; 196 classes</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
