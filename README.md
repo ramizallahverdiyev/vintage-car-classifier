@@ -120,7 +120,7 @@ The trained TorchScript model is included in the repository at `models/exported/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/vintage-car-classifier.git
+git clone https://github.com/ramizallahverdiyev/vintage-car-classifier.git
 cd vintage-car-classifier
 
 # 2. Create and activate a virtual environment
